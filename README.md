@@ -24,10 +24,10 @@ You just found the entrance of the cave, and you know you can't stay in the cave
 Therefore, you decide to develop an effecient way to explore the cave as much as possible and collect as many golds as possible before the cave run out of oxygen.
 
 ###Your Moves###
-```cpp  
-    // You look in a certain direction.
-	// return true when no wall
-	bool lookLeft();
+
+	You look in a certain direction.
+	return true when no wall	
+	`bool lookLeft();`
 	bool lookRight();
 	bool lookUp();
 	bool lookDown();
@@ -136,10 +136,8 @@ Therefore, you decide to develop an effecient way to explore the cave as much as
 	//
 	// return amount threads used
 	int threadUsed();
-```
 
-So retrieving one unit of thread would cost one unit of oxygen. return amount threads used
-```cpp
-	int threadUsed();
-```
+###Displays##
+
+
 ##Things I learned from this project##
