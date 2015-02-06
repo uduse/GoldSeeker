@@ -89,7 +89,7 @@ bool Player::lookAround()
 	bool right = lookRight();
 	bool up = lookUp();
 	bool down = lookDown();
-	if ( left || right || up || down )
+	if ( left && right && up && down )
 	{
 		return true;
 	}
