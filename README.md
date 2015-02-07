@@ -1,7 +1,6 @@
 # GoldSeeker
 An Interface for CS Club Competition
 
-
 ##About
 
 ###Date 
