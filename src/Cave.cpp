@@ -792,9 +792,9 @@ void Cave::printStats()
 {
 	int totalOxy = (int)( row*col * FULLNESS_FACTOR * OXYGEN_RICHNESS ) / 10;
 	cout << "Oxygen: " << oxygen << "/" << totalOxy
-		<< " ( " << setprecision( 2 ) << (double)( 100 * oxygen / totalOxy ) << "% )" << endl;
+		<< " ( " << 100 * oxygen / totalOxy << "% )" << endl;
 	cout << "Golds: " << goldCollected << "/" << numGolds
-		<< " ( " << setprecision( 2 ) << (double)( 100 * goldCollected / numGolds ) << "% )" << endl;
+		<< " ( " << 100 * goldCollected / numGolds << "% )" << endl;
 	cout << endl;
 
 	int oxygenBonus;

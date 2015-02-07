@@ -389,11 +389,11 @@ int main( int argc, char* argv[] )
 	Cave newAdvanture( row, col, complexity );
 	me = new Player( &newAdvanture );
 
-	//newAdvanture.printCave();
-
-	explore();
-
 	newAdvanture.printCave();
+
+	//explore();
+
+	//newAdvanture.printCave();
 
 	return 0;
 }
