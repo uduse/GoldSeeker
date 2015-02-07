@@ -251,8 +251,6 @@ int main( int argc, char* argv[] )
 	// 2. Map Size
 	// 3. Complexity
 
-	cin.get();
-
 	if ( argc == 3 )
 	{
 		seed = time( NULL ) % 1000;

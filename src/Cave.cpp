@@ -1,6 +1,7 @@
 ﻿//#include "stdafx.h"
 #include "Constants.h"
 #include "Cave.h"
+#include <iomanip>
 
 
 
@@ -14,7 +15,7 @@ char color_bold_blue[] = { 0x1b, '[', '1', ';', '3', '4', 'm', 0 };
 char color_bold_red[] = { 0x1b, '[', '1', ';', '3', '1', 'm', 0 };
 char color_bold_yellow[] = { 0x1b, '[', '1', ';', '3', '3', 'm', 0 };
 
-char color_white_red[] = { 0x1b, '[', '0', ';', '3', '7', ';','4', '1', 'm', 0 };
+char color_white_red[] = { 0x1b, '[', '0', ';', '3', '7', ';', '4', '1', 'm', 0 };
 
 char color_red_yellow[] = { 0x1b, '[', '1', ';', '3', '1', ';', '4', '3', 'm', 0 };
 char color_white_blue[] = { 0x1b, '[', '1', ';', '3', '7', ';', '4', '4', 'm', 0 };
@@ -733,7 +734,7 @@ void Cave::printCave()
 			if ( player.x == j && player.y == i )
 			{
 				//SetConsoleTextAttribute( hConsole, 207 );
-				cout << color_blue << (char)DISPLAY_PLAYER << color_normal;
+				cout << color_red_yellow << (char)DISPLAY_PLAYER << color_normal;
 				//SetConsoleTextAttribute( hConsole, 7 );
 			}
 			else
@@ -749,12 +750,15 @@ void Cave::printCave()
 					break;
 				case STATUS_GOLD:
 					//SetConsoleTextAttribute( hConsole, 14 );
+					cout << color_bold_yellow;
 					cout << target->display;
+					cout << color_normal;
 					//SetConsoleTextAttribute( hConsole, 7 );
 					break;
 				case STATUS_ENTRANCE:
 					//SetConsoleTextAttribute( hConsole, 252 );
-					cout << target->display;
+					cout << color_blue_green << (char)DISPLAY_ENTRANCE << color_normal;
+					//cout << target->display;
 					//SetConsoleTextAttribute( hConsole, 7 );
 					break;
 				default:
@@ -786,8 +790,29 @@ void Cave::printCaveStatus()
 
 void Cave::printStats()
 {
-	cout << "Oxygen: " << oxygen << "/" << (int)( row*col * FULLNESS_FACTOR * OXYGEN_RICHNESS ) / 10 << endl;
-	cout << "Golds: " << goldCollected << "/" << numGolds << endl;
+	int totalOxy = (int)( row*col * FULLNESS_FACTOR * OXYGEN_RICHNESS ) / 10;
+	cout << "Oxygen: " << oxygen << "/" << totalOxy
+		<< " ( " << setprecision( 2 ) << (double)( 100 * oxygen / totalOxy ) << "% )" << endl;
+	cout << "Golds: " << goldCollected << "/" << numGolds
+		<< " ( " << setprecision( 2 ) << (double)( 100 * goldCollected / numGolds ) << "% )" << endl;
+	cout << endl;
+
+	int oxygenBonus;
+
+	const int bonus_Threshold = 2;
+	const int bonus_factor = 3;
+	if ( totalOxy / oxygen >= bonus_Threshold )
+	{
+		oxygenBonus = (double)(oxygen)*GOLD_RICHNESS / bonus_factor;
+	}
+	else
+	{
+		oxygenBonus = (double)( totalOxy / bonus_Threshold )*GOLD_RICHNESS / bonus_factor;
+	}
+
+	int score = goldCollected + oxygenBonus;
+
+	cout << "Score: " << score;
 	cout << endl;
 	cout << endl;
 }

@@ -1,6 +1,7 @@
 placeThread();
 int facing = LEFT;
 int initOxy = breathe();
+const int contraction_factor = 50;
 
 while ( threadUsed() + 1 < breathe() )
 {
@@ -14,15 +15,15 @@ while ( threadUsed() + 1 < breathe() )
 	}
 	if ( breathe() % 100 == 0 /*|| breathe() < 4201*/ )
 	{
-		system( "clear" );
-		cout << "facing: " << facing << endl;
-		cout << "breathe: " << breathe() << endl;
+		//system( "clear" );
+		//cout << "facing: " << facing << endl;
+		//cout << "breathe: " << breathe() << endl;
 		//cout << "x" << me->cave->playerBlock()->x; cout << endl;
 		//cout << "y" << me->cave->playerBlock()->y; cout << endl;
-		backpack();
-		sketchPad();
-		usleep( 500000 );
-		cin.get();
+		//backpack();
+		//sketchPad();
+		//usleep( 500000 );
+		//cin.get();
 	}
 	if ( threadUsed() == 0 )
 	{
@@ -30,8 +31,8 @@ while ( threadUsed() + 1 < breathe() )
 	}
 
 	// Thread Contraction
-	else if ( threadUsed() >= 5
-			  && ( threadUsed() % ( initOxy / 100 ) == 0 )
+	else if ( threadUsed() >= initOxy / 50
+			  && ( threadUsed( ) % ( initOxy / contraction_factor ) == 0 )
 			  && rand() % ( initOxy * (int)log( initOxy ) / ( breathe() * (int)log( breathe() ) ) ) == 0 )
 	{
 		if ( markedLeft() )
