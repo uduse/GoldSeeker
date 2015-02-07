@@ -71,7 +71,7 @@ return true when there's no wall in that direction.
 
 	bool lookAround();
 
-return true if there's no wall in none of the direction.
+return true if there's no wall in any direction.
 
 <br>
 
