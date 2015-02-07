@@ -1,7 +1,7 @@
 placeThread();
 int facing = LEFT;
 int initOxy = breathe();
-const int contraction_factor = 50;
+const int contraction_factor = 40; // Smaller for more stable performace
 
 while ( threadUsed() + 1 < breathe() )
 {
@@ -31,32 +31,56 @@ while ( threadUsed() + 1 < breathe() )
 	}
 
 	// Thread Contraction
-	else if ( threadUsed() >= initOxy / 50
-			  && ( threadUsed( ) % ( initOxy / contraction_factor ) == 0 )
+	else if ( threadUsed() >= initOxy / 20
+			  && ( threadUsed() % ( initOxy / contraction_factor ) == 0 )
 			  && rand() % ( initOxy * (int)log( initOxy ) / ( breathe() * (int)log( breathe() ) ) ) == 0 )
 	{
-		if ( markedLeft() )
+		if ( markedLeft() && !markedRight() )
 		{
 			moveLeft();
 			moveRight();
+			//if ( moveRight() )
+			//{
+			//	moveDown();
+			//	moveLeft();
+			//}
+			//facing = DOWN;
 			facing = RIGHT;
 		}
-		else if ( markedUp() )
+		else if ( markedUp() && !markedDown() )
 		{
 			moveUp();
 			moveDown();
+			//if ( moveDown() )
+			//{
+			//	moveLeft();
+			//	moveUp();
+			//}
+			//facing = LEFT;
 			facing = DOWN;
 		}
-		else if ( markedRight() )
+		else if ( markedRight() && !markedLeft() )
 		{
 			moveRight();
 			moveLeft();
+			//if ( moveLeft() )
+			//{
+			//	moveUp();
+			//	moveRight();
+			//}
+			//facing = UP;
 			facing = LEFT;
 		}
-		else if ( markedDown() )
+		else if ( markedDown() && !markedUp() )
 		{
 			moveDown();
 			moveUp();
+			//if ( moveUp() )
+			//{
+			//	moveRight();
+			//	moveDown();
+			//}
+			//facing = RIGHT;
 			facing = UP;
 		}
 	}

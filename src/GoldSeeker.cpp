@@ -391,9 +391,9 @@ int main( int argc, char* argv[] )
 
 	newAdvanture.printCave();
 
-	//explore();
+	explore();
 
-	//newAdvanture.printCave();
+	newAdvanture.printCave();
 
 	return 0;
 }

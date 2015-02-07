@@ -180,10 +180,16 @@ return false when you are not next to the entrance
 #####`·` Places you visited
 #####`*` Places have your thread on
 #####`0` Places you collected a gold
+#####`X` Walls you have discovered
 
 <br>
 
-####
+####Sketch Pad - Examples
+(Aedi's implementation for exploring algorithm is used)
+
+You started  
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch_Pad%20(2).png)
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch_Pad%20(1).png)
 
 ####Private View - Icons
 The real shape or a Cave, not accessible in competitor's implementation )  
