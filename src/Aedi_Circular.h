@@ -28,8 +28,11 @@ while ( threadUsed() + 1 < breathe() )
 	{
 		break;
 	}
-	//else if ( threadUsed() >= 1 * initOxy / ( 2 * ( (double)OXYGEN_RICHNESS / 10.0 ) ) )
-	else if ( threadUsed() >= 5 && ( threadUsed() % ( initOxy / 75 ) == 0 ) && rand() % 2 == 0)
+
+	// Thread Contraction
+	else if ( threadUsed() >= 5
+			  && ( threadUsed() % ( initOxy / 100 ) == 0 )
+			  && rand() % ( initOxy * (int)log( initOxy ) / ( breathe() * (int)log( breathe() ) ) ) == 0 )
 	{
 		if ( markedLeft() )
 		{
@@ -59,6 +62,5 @@ while ( threadUsed() + 1 < breathe() )
 }
 
 sketchPad();
-//cin.get();
 retrieveThread();
 leave();

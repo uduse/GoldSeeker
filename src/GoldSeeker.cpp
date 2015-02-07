@@ -23,6 +23,7 @@
 #include "Cave.h"
 #include <ctime>
 #include <unistd.h>
+#include <math.h>
 #include "Ahead.h" //DELETE
 
 using namespace std;

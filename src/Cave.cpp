@@ -2,12 +2,29 @@
 #include "Constants.h"
 #include "Cave.h"
 
+
+
+
 char color_blue[] = { 0x1b, '[', '0', ';', '3', '4', 'm', 0 };
 char color_red[] = { 0x1b, '[', '0', ';', '3', '1', 'm', 0 };
 char color_yellow[] = { 0x1b, '[', '0', ';', '3', '3', 'm', 0 };
+
+
+char color_bold_blue[] = { 0x1b, '[', '1', ';', '3', '4', 'm', 0 };
+char color_bold_red[] = { 0x1b, '[', '1', ';', '3', '1', 'm', 0 };
 char color_bold_yellow[] = { 0x1b, '[', '1', ';', '3', '3', 'm', 0 };
 
+char color_white_red[] = { 0x1b, '[', '0', ';', '3', '7', ';','4', '1', 'm', 0 };
+
+char color_red_yellow[] = { 0x1b, '[', '1', ';', '3', '1', ';', '4', '3', 'm', 0 };
+char color_white_blue[] = { 0x1b, '[', '1', ';', '3', '7', ';', '4', '4', 'm', 0 };
+char color_blue_green[] = { 0x1b, '[', '1', ';', '3', '4', ';', '4', '2', 'm', 0 };
+
+
 char color_normal[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
+
+
+
 
 
 //cout << blue << "This text should be blue" << normal << endl;
@@ -769,7 +786,7 @@ void Cave::printCaveStatus()
 
 void Cave::printStats()
 {
-	cout << "Oxygen: " << oxygen << "/" << (int)(row*col * FULLNESS_FACTOR * OXYGEN_RICHNESS) / 10 << endl;
+	cout << "Oxygen: " << oxygen << "/" << (int)( row*col * FULLNESS_FACTOR * OXYGEN_RICHNESS ) / 10 << endl;
 	cout << "Golds: " << goldCollected << "/" << numGolds << endl;
 	cout << endl;
 	cout << endl;
@@ -796,9 +813,7 @@ void Cave::printTrails()
 			if ( player.x == j && player.y == i )
 			{
 				//SetConsoleTextAttribute( hConsole, 207 );
-				cout << color_red;
-				cout << (char)DISPLAY_PLAYER;
-				cout << color_normal;
+				cout << color_red_yellow << (char)DISPLAY_PLAYER << color_normal;
 				//SetConsoleTextAttribute( hConsole, 7 );
 			}
 			else
@@ -807,18 +822,22 @@ void Cave::printTrails()
 				if ( target == entrance )
 				{
 					//SetConsoleTextAttribute( hConsole, 252 );
-					cout << (char)DISPLAY_ENTRANCE;
+					cout << color_blue_green << (char)DISPLAY_ENTRANCE << color_normal;
 					//SetConsoleTextAttribute( hConsole, 7 );
 				}
 				else if ( target->collided )
 				{
 					//SetConsoleTextAttribute( hConsole, 12 );
-					cout << DISPLAY_COLLIDE;
+					cout << color_red;
+					cout << DISPLAY_COLLIDE << color_normal;
+					cout << color_normal;
 					//SetConsoleTextAttribute( hConsole, 7 );
 				}
 				else if ( target->threaded )
 				{
+					cout << color_white_blue;
 					cout << DISPLAY_THREAD;
+					cout << color_normal;
 				}
 				else if ( target->goldCollected )
 				{
@@ -826,7 +845,10 @@ void Cave::printTrails()
 					//{
 					//SetConsoleTextAttribute( hConsole, 144 );
 					//}
+
+					cout << color_yellow;
 					cout << DISPLAY_GOLD;
+					cout << color_normal;
 					//SetConsoleTextAttribute( hConsole, 7 );
 				}
 				else if ( target->visited )
@@ -838,12 +860,12 @@ void Cave::printTrails()
 					cout << DISPLAY_TRACE;
 					//SetConsoleTextAttribute( hConsole, 7 );
 				}
-				else if ( target->status == STATUS_ENTRANCE )
-				{
-					//SetConsoleTextAttribute( hConsole, 252 );
-					cout << entrance->display;
-					//SetConsoleTextAttribute( hConsole, 7 );
-				}
+				//else if ( target->status == STATUS_ENTRANCE )
+				//{
+				//	//SetConsoleTextAttribute( hConsole, 252 );
+				//	cout << entrance->display;
+				//	//SetConsoleTextAttribute( hConsole, 7 );
+				//}
 				else
 				{
 					cout << " ";
