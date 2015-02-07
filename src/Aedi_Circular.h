@@ -15,15 +15,15 @@ while ( threadUsed() + 1 < breathe() )
 	}
 	if ( breathe() % 100 == 0 /*|| breathe() < 4201*/ )
 	{
-		//system( "clear" );
+		system( "clear" );
 		//cout << "facing: " << facing << endl;
 		//cout << "breathe: " << breathe() << endl;
 		//cout << "x" << me->cave->playerBlock()->x; cout << endl;
 		//cout << "y" << me->cave->playerBlock()->y; cout << endl;
 		//backpack();
-		//sketchPad();
+		sketchPad();
 		//usleep( 500000 );
-		//cin.get();
+		cin.get();
 	}
 	if ( threadUsed() == 0 )
 	{
@@ -86,6 +86,9 @@ while ( threadUsed() + 1 < breathe() )
 	}
 }
 
+while ( retrieveThread( 1 ) )
+{
+
+}
 sketchPad();
-retrieveThread();
 leave();

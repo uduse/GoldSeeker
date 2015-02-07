@@ -795,23 +795,31 @@ void Cave::printStats()
 		<< " ( " << 100 * oxygen / totalOxy << "% )" << endl;
 	cout << "Golds: " << goldCollected << "/" << numGolds
 		<< " ( " << 100 * goldCollected / numGolds << "% )" << endl;
-	cout << endl;
 
 	int oxygenBonus;
 
 	const int bonus_Threshold = 2;
 	const int bonus_factor = 3;
+
+	int bonusMax = ( totalOxy / bonus_Threshold )*GOLD_RICHNESS / bonus_factor;
 	if ( totalOxy / oxygen >= bonus_Threshold )
 	{
-		oxygenBonus = (double)(oxygen)*GOLD_RICHNESS / bonus_factor;
+		oxygenBonus = (oxygen)*GOLD_RICHNESS / bonus_factor;
 	}
 	else
 	{
-		oxygenBonus = (double)( totalOxy / bonus_Threshold )*GOLD_RICHNESS / bonus_factor;
+		oxygenBonus = bonusMax;
+	}
+	cout << "Bonus: " << oxygenBonus << endl;
+	// The final score is the percentage of collected points out of possible points. 
+	int score = 100 * ( goldCollected + oxygenBonus ) / numGolds;
+
+	if ( score > 100 )
+	{
+		score = 100;
 	}
 
-	int score = goldCollected + oxygenBonus;
-
+	cout << endl;
 	cout << "Score: " << score;
 	cout << endl;
 	cout << endl;

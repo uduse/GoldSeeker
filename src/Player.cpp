@@ -407,6 +407,13 @@ bool Player::retrieveTread( int color, int steps )
 			//cout << "y: " << y << endl;
 			thread[color].pop_front();
 			steps--;
+
+			if ( thread[color].size() % 20 == 0 )
+			{
+				cin.get();
+				sketchPad();
+			}
+
 		}
 
 		if ( !thread[color].empty() )
