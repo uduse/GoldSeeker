@@ -2,6 +2,16 @@
 #include "Constants.h"
 #include "Cave.h"
 
+char color_blue[] = { 0x1b, '[', '0', ';', '3', '4', 'm', 0 };
+char color_red[] = { 0x1b, '[', '0', ';', '3', '1', 'm', 0 };
+char color_yellow[] = { 0x1b, '[', '0', ';', '3', '3', 'm', 0 };
+char color_bold_yellow[] = { 0x1b, '[', '1', ';', '3', '3', 'm', 0 };
+
+char color_normal[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
+
+
+//cout << blue << "This text should be blue" << normal << endl;
+
 using namespace std;
 
 Cave::Cave()
@@ -696,16 +706,17 @@ void Cave::printCave()
 
 		for ( int j = 0; j < col; j++ )
 		{
-			if ( myBrush->x == j && myBrush->y == i )
-			{
-				//SetConsoleTextAttribute( hConsole, 12 );
-				cout << " ";
-				//SetConsoleTextAttribute( hConsole, 7 );
-			}
-			else if ( player.x == j && player.y == i )
+			//if ( myBrush->x == j && myBrush->y == i )
+			//{
+			//	//SetConsoleTextAttribute( hConsole, 12 );
+			//	cout << " ";
+			//	//SetConsoleTextAttribute( hConsole, 7 );
+			//}
+			//else 
+			if ( player.x == j && player.y == i )
 			{
 				//SetConsoleTextAttribute( hConsole, 207 );
-				cout << (char)DISPLAY_PLAYER;
+				cout << color_blue << (char)DISPLAY_PLAYER << color_normal;
 				//SetConsoleTextAttribute( hConsole, 7 );
 			}
 			else
@@ -785,7 +796,9 @@ void Cave::printTrails()
 			if ( player.x == j && player.y == i )
 			{
 				//SetConsoleTextAttribute( hConsole, 207 );
+				cout << color_red;
 				cout << (char)DISPLAY_PLAYER;
+				cout << color_normal;
 				//SetConsoleTextAttribute( hConsole, 7 );
 			}
 			else

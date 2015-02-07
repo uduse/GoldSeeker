@@ -23,7 +23,6 @@
 #include "Cave.h"
 #include <ctime>
 #include <unistd.h>
-
 #include "Ahead.h" //DELETE
 
 using namespace std;
@@ -250,6 +249,8 @@ int main( int argc, char* argv[] )
 	// 1. Seed
 	// 2. Map Size
 	// 3. Complexity
+
+	cin.get();
 
 	if ( argc == 3 )
 	{
