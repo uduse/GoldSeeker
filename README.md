@@ -175,7 +175,7 @@ return false when you are not next to the entrance
 
 ###Displays##
 
-#####`&`: You
+#####`&` You
 
 #####`@` Entrance
 
