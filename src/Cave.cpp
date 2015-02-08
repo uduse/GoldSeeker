@@ -205,17 +205,17 @@ int Cave::playerVisit()
 	if ( oxygen < 0 )
 	{
 		printTrails();
-		cout << "You are suffocated to death!" << endl;
+		cout << "You are suffocated to death!" << endl; cout << endl;
 		cout << "You have collected " << goldCollected <<
-			( goldCollected <= 1 ? " golds " : " gold " ) << endl;
+			( goldCollected <= 1 ? " gold." : " golds." ) << endl;
 
 		if ( goldCollected >= 1 )
 		{
-			cout << "But unfortunately you won't have chance to use "
-				<< ( goldCollected <= 1 ? "it." : "them." ) << endl; cout << endl;
+			cout << "But unfortunately you won't a the chance to use "
+				<< ( goldCollected <= 1 ? "it." : "them." ) << endl;
 		}
 		cout << endl;
-		cout << "Score: 0" << endl;
+		cout << "Score: 0" << endl; cout << endl;
 		exit( 0 );
 	}
 
