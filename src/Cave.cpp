@@ -214,6 +214,8 @@ int Cave::playerVisit()
 			cout << "But unfortunately you won't have chance to use "
 				<< ( goldCollected <= 1 ? "it." : "them." ) << endl; cout << endl;
 		}
+		cout << endl;
+		cout << "Score: 0" << endl;
 		exit( 0 );
 	}
 
