@@ -241,6 +241,21 @@ Caves are created based on two properties, **Size**, and **Complexity**.
 
 <br>
 
+###Scoring
+Though you're a zealous gold seeker, you do understand the importance of life:
+
+**If you died:**
+
+**Score = 0**
+
+**If you left the cave alive:**
+
+**Score = percent of golds collected + bonus.**
+
+Bonus is rewarded for extra oxygen left in the cave. You know, staying in a low-oxygen environment for too long is bad for health. 
+
+
+
 ##Things I learned from this project##
 1. **Learned how to use github to do version control.** Can't believe I started this late!
 2. **Discovered a way to generate a random map.** I accomplished this by having a brush with thickness moving randomly on a canvas and making marks on it, and places not marked will be walls (not visitable).
