@@ -4,7 +4,7 @@ An Interface for CS Club Competition
 ##About
 
 ###Date 
-1/29/15 ~ 2/6/15 (~30 hours)
+1/29/15 ~ 2/7/15 (~40 hours)
 
 ###Author
 Uduse
@@ -242,8 +242,9 @@ Caves are created based on two properties, **Size**, and **Complexity**.
 <br>
 
 ##Things I learned from this project##
-1. **How to generate a random map.** I accomplished this by having a brush with thickness moving randomly on a canvas and making marks on it, and places not marked will be walls (not visitable).
+1. **Learned how to use github to do version control.** Can't believe I started this late!
+2. **Discovered a way to generate a random map.** I accomplished this by having a brush with thickness moving randomly on a canvas and making marks on it, and places not marked will be walls (not visitable).
 2. **A better understanding of Public v.s Private.** That difference did not really matter for projects I have done before this, since I don't really need to hide things from myself, it's just a better "Style" or it's a "Convention" to hide things as private. However, this time, since I am making this interface for a competition, I really need to limit things competitors can access, otherwise it's really easy to cheat.
 3. **A better utilization of tools that help me code faster.** Especially "Extract Method," "Create Method," and "Introduce Viable" functions provided by a Visual Studio extension "Visual Assist," and "Simultaneous edit in more than one location in the editor" by "MultiEditing." They helped me a lot in saving my time from doing repetitive and dirty work, so I was able to finish the first working prototype of the project in 15 hours.
-4. **How to get colored output in command window.** Learned how to used "Window.h" to make my output colorful in windows and ASCII Escape Codes in Linux, and this made my testing much easier (things are easier to differentiate).
-5. **Better understanding of a list and its iterator.** The Ball of thread was implemented as a linked list, and I learned from hours of debugging "Loop Prevention" mechanism of it.
+4. **Learned how to get colored output in command window.** Learned how to used "Window.h" to make my output colorful in windows and ASCII Escape Codes in Linux, and this made my testing much easier (things are easier to differentiate).
+5. **A better understanding of a list and its iterator.** The Ball of thread was implemented as a linked list, and I learned from hours of debugging "Loop Prevention" mechanism of it.
