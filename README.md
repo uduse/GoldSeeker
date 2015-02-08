@@ -185,11 +185,30 @@ return false when you are not next to the entrance
 <br>
 
 ####Sketch Pad - Examples
-(Aedi's implementation for exploring algorithm is used)
+(Aedi's implementation of exploration algorithm is used)
 
-You started  
-![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch_Pad%20(2).png)
-![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch_Pad%20(1).png)
+You start exploring.
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch%20Pad%20Examples%20(2).png)
+
+You keep exploring.
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch%20Pad%20Examples%20(3).png)
+
+You are almost done with exploring.
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch%20Pad%20Examples%20(4).png)
+
+You finished exploring because you think there isn't enough oxygen left in the cave and you'd better get out ASAP. 
+
+You then trace back with thread you left on ground. You are so glad that you brought the ball of thread with you.
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch%20Pad%20Examples%20(5).png)
+
+Still retrieving. You are feeling bad because there's only a little oxygen in the cave.
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch%20Pad%20Examples%20(1).png)
+
+You finally get to the entrance and leave the cave! 
+You believe there's still unknown area in the cave, but you are more glad that you left the cave, ALIVE. 
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Sketch%20Pad%20Examples%20(6).png)
+
+<br>
 
 ####Private View - Icons
 The real shape or a Cave, not accessible in competitor's implementation )  
@@ -201,7 +220,26 @@ The real shape or a Cave, not accessible in competitor's implementation )
 
 <br>
 
+####Private View - Examples
 
+Caves are created based on two properties, **Size**, and **Complexity**.
+
+#####Medium - Simple
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Cave_Examples%20(2).png)
+
+#####Medium - Fair
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Cave_Examples%20(3).png)
+
+#####Large - Fair
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Cave_Examples%20(4).png)
+
+#####Extra Large - Fair
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Cave_Examples%20(5).png)
+
+#####Extra Large - Extra Complex
+![](https://raw.githubusercontent.com/Uduse/GoldSeeker/master/img/Cave_Examples%20(1).png)
+
+<br>
 
 ##Things I learned from this project##
 1. **How to generate a random map.** I accomplished this by having a brush with thickness moving randomly on a canvas and making marks on it, and places not marked will be walls (not visitable).
