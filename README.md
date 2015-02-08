@@ -258,7 +258,7 @@ Though you're a zealous gold seeker, you do understand the importance of life:
 
 Bonus is rewarded for extra oxygen left in the cave. You know, staying in a low-oxygen environment for too long is bad for health. 
 
-
+<br>
 
 ##Things I learned from this project##
 1. **Learned how to use github to do version control.** Can't believe I started this late!
