@@ -24,11 +24,150 @@
 #include <ctime>
 #include <unistd.h>
 #include <math.h>
+#include "Ahead.h" //DELETE
 
 using namespace std;
 
-void example()
+void intro()
 {
+	//======================================================================================================//
+	//								
+	//  You are an enthuastic gold seeker and you want to make a fortune by
+	//  collecting golds left in a cave by ancient pirates.
+	//  
+	//  You found the entrance of the cave, and you know you can't stay in
+	//  the cave forever to find all golds because oxygen in the cave 
+	//  is limited and you want to get out the cave alive.
+	//  
+	//  So, you decided to develop an effecient way to explore the cave
+	//  as much as possible and collect as many golds as possible before the
+	//  cave run out of oxygen.
+	//  															
+	//======================================================================================================//
+
+	//====================================//
+	//  Your Moves
+	//====================================//
+
+
+	// You look in a certain direction.
+	// return true when no wall
+	bool lookLeft();
+	bool lookRight();
+	bool lookUp();
+	bool lookDown();
+
+	// You gaze in four directions.
+	//
+	// return true if anyone of the directions is a wall
+	bool lookAround();
+
+
+	// You walk towards a certain direction for one step.
+	// Since it requires movement, the total oxygen in
+	// the cave would decrease by 1.
+	//
+	// return false when you can't make that move because
+	// there's a wall
+	bool moveLeft();
+	bool moveRight();
+	bool moveUp();
+	bool moveDown();
+
+
+	// You look at your Sketch Pad, and check if a certain place
+	// next to you has been visited.
+	//
+	// return true if visitied
+	bool markedLeft();
+	bool markedRight();
+	bool markedUp();
+	bool markedDown();
+
+	// You leave the cave through the entrance
+	// with all your golds in your backpack, alive.
+	//
+	// return false when you are not next to the entrance
+	bool leave();
+
+
+	// You take a breathe and detect the richness of
+	// oxygen in the air with your well-trainted lungs.
+	//
+	// return amount of oxygen available in the cave
+	int breathe();
+
+	// You open your backpack and check the amount of
+	// gold in that.
+	//
+	// retunr gold you collected.
+	int backpack();
+
+
+	// You are a skilled artist with perfect
+	// space perception. During your exploration,
+	// you mark all places you have been and
+	// all walls you have noticed on your Sketch Pad.
+	//
+	// You look at your sketchPad closely,
+	// with all details in eyes.
+	// print the map you created for the cave
+	void sketchPad();
+
+	// You check your sketch pad and find out what
+	// places you have been.
+	//
+	// return true if the place next to you in a
+	// certain direction has been visited by you.
+	bool markedLeft();
+	bool markedRight();
+	bool markedUp();
+	bool markedDown();
+
+
+	// You learned from the story about Theseus
+	// and the Minotaur, so you brought with you
+	// a Ball of Thread.
+	//
+	// You can place it at your current location, and
+	// when you retrieve it, it will bring you back given
+	// steps, or all the way back to where you placed it.
+	//
+	//
+	// Since you're smart enough, you always rewind
+	// useless threads to prevent loops whenever you
+	// step back to somewhere you have placed thread on.
+	//
+	// return false when placing a ball that has been used
+	bool placeThread();
+
+	// The thread brings you all the way back to where
+	// you placed it, then you pick up the thread.
+	// return false when the ball is still in your hand
+	bool retrieveThread();
+
+	// The thread brings you back certain steps, you won't
+	// pick up the thread in this case.
+	// return false when the ball is still in your hand
+	bool retrieveThread( int steps );
+
+	// You take notes about the amount of threads of a
+	// certain ball is used.
+	// Since you're good at math, you converse the amount
+	// of threads used based on oxyen.
+	// So retrieving one unit of thread would cost
+	// one unit of oxygen.
+	//
+	// return amount threads used
+	int threadUsed();
+
+
+}
+
+void explore()
+{
+
+
 	//====================================//
 	//  Your experienced friend helped you 
 	//  to create an approach to search in a cave
@@ -47,78 +186,51 @@ void example()
 	//====================================//
 
 	//====================================//
-	//        Tom Riddle's Note
+	//        Sean Davis' Note
 	//====================================//
 
-	// Place the red ball in front of the entrance
-	placeThread();
 
-	// Search until oxygen is just enough for retreating
-	while ( threadUsed() < breathe() )
-	{
-		// Look around and check walls
-		lookAround();
+	//// Place the red ball in front of the entrance
+	//placeRedThread();
 
-		// Follow your heart and move randomly
-		switch ( rand() % 4 )
-		{
-		case 0:
-			moveDown();
-			break;
-		case 1:
-			moveRight();
-			break;
-		case 2:
-			moveLeft();
-			break;
-		case 3:
-			moveUp();
-			break;
-		}
+	//// Search until oxygen is just enough for retreating
+	//while ( redThreadUsed() < breathe() )
+	//{
+	//	switch ( rand() % 4 )
+	//	{
+	//	case 0:
+	//		moveDown();
+	//		break;
+	//	case 1:
+	//		moveRight();
+	//		break;
+	//	case 2:
+	//		moveLeft();
+	//		break;
+	//	case 3:
+	//		moveUp();
+	//		break;
+	//	}
+	//	lookAround();
+	//}
 
-		// For every 50 steps, 
-		// take a break and check the Sketch Pad
-		if ( breathe() % 50 == 0 )
-		{
-			system( "clear" ); // Clear Screen
-			sketchPad();
-			usleep( 100000 );  // Pause for 1ms
-			//cin.get()  // Pause until Enter is pressed
-		}
-	}
+	//// Safety first, go back to entrance and leave the cave
+	//retrieveRedThread();
+	//leave();
 
-	// Safety first, go back to entrance and leave the cave
-	retrieveThread(); // Retrieve all the way back
-	leave();
+	//// Enjoy the sketch after gets home.
+	//sketchPad();
 
-	// Enjoy the sketch after gets home.
-	system( "clear" );
-	sketchPad();
-}
-
-void explore()
-{
 	//====================================//
 	//  However, you think you can do better
 	//  than your friend, and here's your
 	//  approach:
 	//====================================//
-	
 
+#include "Aedi_Circular.h"
+	//#include "Aedi_Carpet.h"
 
 }
-
-
-void driver( int row, int col, int complexity )
-{
-	Cave newAdvanture( row, col, complexity );
-	me = new Player( &newAdvanture );
-
-	example();
-	//explore();
-	newAdvanture.printCave();
-}
-
 
 int main( int argc, char* argv[] )
 {
@@ -274,8 +386,14 @@ int main( int argc, char* argv[] )
 	//  Driver
 	//====================================//
 
-	driver( row, col, complexity );
+	Cave newAdvanture( row, col, complexity );
+	me = new Player( &newAdvanture );
+
+	newAdvanture.printCave();
+
+	explore();
+
+	newAdvanture.printCave();
 
 	return 0;
 }
-
