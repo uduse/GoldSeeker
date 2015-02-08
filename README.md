@@ -1,6 +1,8 @@
 # GoldSeeker
 An Interface for CS Club Competition
 
+<br>
+
 ##About
 
 ###Date 
@@ -16,6 +18,8 @@ A program made as an interface for a competition of CS Club at UC Davis.
 Competitors will write a short algorithm in 2~3 hours, controlling the
 charactor to collect as many golds as possible in a randomly generated
 cave with limited oxygen.
+
+<br>
 
 ##Details
 ###Storyline
