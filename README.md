@@ -80,7 +80,7 @@ For example, if you place your thread and then take a path like 0 -> 1 -> 2 -> 3
 
 You always take notes for how much thread you used.
 
-In addition, since you're good at math, you always converse the amount of used thread based on oxygen. So retrieving one unit of thread would cost one unit of oxygen.
+In addition, since you're good at math, you always converse the amount of used thread based on oxygen. Retrieving one unit of thread would not cost oxygen, but you're moving back with the thread, and for each step it takes one oxygen.
 
 <br>
 
