@@ -3,6 +3,32 @@ An Interface for CS Club Competition
 
 <br>
 
+##Table of Contents
+
+<br>
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [About](#about)
+  - [Date](#date)
+  - [Author](#author)
+  - [Contact](#contact)
+  - [Description](#description)
+- [Details](#details)
+  - [Storyline](#storyline)
+  - [Your Equipment](#your-equipment)
+  - [Your Moves](#your-moves)
+  - [Display](#display)
+  - [Scoring](#scoring)
+- [Things I learned from this project](#things-i-learned-from-this-project)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+<br>
+
 ##About
 
 ###Date 
